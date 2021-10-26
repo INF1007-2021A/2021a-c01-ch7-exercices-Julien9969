@@ -12,19 +12,21 @@ import time
 
 
 # TODO: Définissez vos fonction ici
-def V_elipsoide(a, b, c, Mv):
+def V_elipsoide(a=10, b=10, c=10, Mv=10):
     volume = (4 / 3) * math.pi * a * b * c
     masse = volume * Mv
     return volume, masse
 
 def frequence_chap6(phrase: str):
     # freq = frequence(sentence)
-    xtx = frequence(phrase)
+    # ex chap 6 returne du text et non un dict faudrait quil retourn un dict pout que ce code marche
     
-    return 
+
+    
+    pass
 
 def arbre(taille):
-    if taille < 60 :
+    if taille < 30 :
         return
     else:
         ttl.color("green")
@@ -71,14 +73,17 @@ if __name__ == '__main__':
     txt = "le volume de l'elipsoide est {} et sa masse est {}"
     print(txt.format(volume, masse))
 
-    phrase = "le volume de l'elipsoide est 100.53096491487338 et sa masse est 1005.3096491487338"
-    print(frequence_chap6(phrase))
+    volume, masse = V_elipsoide()
+    txt = "le volume de l'elipsoide est {} et sa masse est {}"
+    print(txt.format(volume, masse))
 
-    taille = 100
+    taille = 80
     ttl.left(90)
     arbre(taille)
     ttl.done()
 
+    
+    print((lambda phrase: sorted(frequence(phrase).items(), key=lambda x : x[1], reverse=True ))("je suis un phrase"))
 
 
     valide_letter = set("atgc")
